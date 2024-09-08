@@ -16,23 +16,23 @@ const userSchema = new Schema({
     },
     username: {
         type: String,
-        required: [true, "Username is required!"],
-        unique: [true, "Username should be unique!"],
-    },
-    url: {
-        type: String,
-        required: [true, "Username is required!"],
         unique: [true, "Username should be unique!"],
     },
     email: {
         type: String,
         required: [true, "Please provide your email address!"],
-        unique: true,
+        unique: [true, "This email already exists!"],
         lowercase: true,
         validate: [isEmail, "Please provide a valid email!"],
     },
-    mobile: {
-        type: Number,
+    profilePhoto: String,
+    resume: String,
+    mobile: Number,
+    role: String,
+    about: {
+        type: String,
+        minLength: 120,
+        maxlength: 10000,
     },
     password: {
         type: String,

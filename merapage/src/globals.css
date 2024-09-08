@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .profile-tab {
+    @apply bg-dark-4 text-white text-center py-2 transition;
+  }
+
+
+}
+
+@layer components {
+
+  /* SHADCN COMPONENTS */
+  /* Form */
+  .shad-form_label {
+    @apply text-white !important;
+  }
+
+  .shad-form_message {
+    @apply text-yellow-1 !important;
+  }
+
+  .shad-input {
+    @apply h-12 bg-dark-3 border-none placeholder:text-gray-500 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-sky-1 !important;
+  }
+
+  .shad-file {
+    @apply h-12 bg-dark-3 border-none placeholder:text-gray-500 file:text-white file:border-none file:mr-4 file:py-2 file:px-4 file:cursor-pointer rounded-md focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-sky-1 !important;
+  }
+
+  .shad-textarea {
+    @apply h-36 bg-dark-3 rounded-xl border-none focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-sky-1 !important;
+  }
+
+}

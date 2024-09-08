@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { serviceList } from "../constants";
+import { AccountContext } from "../context/AccountProvider";
 
 const About = () => {
+    const { account } = useContext(AccountContext);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -13,28 +15,7 @@ const About = () => {
             </header>
 
             <section className="about-text">
-                <p>
-                    I'm Full Stack Web Developer from Bengaluru, Karnatka,
-                    India, completed B-Tech in Computer Science from KIST
-                    College, Bhubaneshwar, Odisha in 2023.
-                </p>
-
-                <p>
-                    I have completed several courses and projects related to web
-                    development, including building a RESTful API. I am skilled
-                    in Node.js, MongoDB, and MySQL, and have experience with
-                    frontend technologies such as React, Redux, and Next.js.
-                    Through these experiences, I have developed a strong
-                    foundation in programming languages such as JavaScript,
-                    Java, HTML, and CSS, as well as experience in creating
-                    scalable and maintainable code.
-                </p>
-                <p>
-                    In addition to my technical skills, I possess excellent
-                    communication skills and enjoy working collaboratively with
-                    others to achieve common goals. I am highly motivated,
-                    detail-oriented, and possess a strong work ethic.
-                </p>
+                <p>{account?.about}</p>
                 <a href="/afzal-resume.pdf" className="download-resume">
                     Download Resume
                 </a>

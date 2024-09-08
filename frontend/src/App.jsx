@@ -8,8 +8,19 @@ import Contact from "./components/Contact";
 import "./App.css";
 import SingleProject from "./components/SingleProject";
 import { Route, Routes } from "react-router-dom";
+import { useContext } from "react";
+import { AccountContext } from "./context/AccountProvider";
 
 const App = () => {
+    const { loading } = useContext(AccountContext);
+
+    if (loading) {
+        return (
+            <div style={{ color: "white", textAlign: "center" }}>
+                Loading...
+            </div>
+        );
+    }
     return (
         <main>
             <Sidebar />
