@@ -30,6 +30,14 @@ const AccountProvider = ({ children }) => {
         };
         getAccountData();
     }, []);
+
+    if (!account) {
+        return (
+            <div style={{ color: "white", textAlign: "center" }}>
+                Internal Server Error
+            </div>
+        );
+    }
     return (
         <AccountContext.Provider
             value={{
