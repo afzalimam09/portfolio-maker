@@ -31,6 +31,14 @@ const AccountProvider = ({ children }) => {
         getAccountData();
     }, []);
 
+    if (loading) {
+        return (
+            <div style={{ color: "white", textAlign: "center" }}>
+                Loading...
+            </div>
+        );
+    }
+
     if (!account) {
         return (
             <div style={{ color: "white", textAlign: "center" }}>
